@@ -1,14 +1,14 @@
 <job>
-  <name>1 - Create Bikes</name>
+  <name>3 - Create BikesDW</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2022/12/16 00:52:47.510</created_date>
+  <created_date>2022/12/17 00:03:56.555</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2022/12/17 00:07:58.229</modified_date>
+  <modified_date>2022/12/17 00:29:06.611</modified_date>
   <parameters>
     <parameter>
       <name>MyPath</name>
@@ -380,231 +380,105 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
-      <yloc>80</yloc>
+      <xloc>352</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>SQL_Create_Country</name>
+      <name>SQL_CreateDimCustomer</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_Country.sql</sqlfilename>
+      <sqlfilename>${MyPath}/BI_Projects/BI_62/task2/data_mart/Dim_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_62</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
+      <xloc>352</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>SQL_Create_Address</name>
+      <name>SQL_CreateDimDate</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_Address.sql</sqlfilename>
+      <sqlfilename>${MyPath}/BI_Projects/BI_62/task2/data_mart/Dim_Date.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_62</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>272</xloc>
-      <yloc>288</yloc>
+      <xloc>352</xloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>SQL_Create_Person</name>
+      <name>SQL_CreateDimLocation</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_Person.sql</sqlfilename>
+      <sqlfilename>${MyPath}/BI_Projects/BI_62/task2/data_mart/Dim_Location.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_62</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>272</xloc>
-      <yloc>352</yloc>
+      <xloc>352</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>SQL_Create_Customer</name>
+      <name>SQL_CreateDimProduct</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_Customer.sql</sqlfilename>
+      <sqlfilename>${MyPath}/BI_Projects/BI_62/task2/data_mart/Dim_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_62</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>3</nr>
-      <xloc>272</xloc>
-      <yloc>416</yloc>
+      <xloc>352</xloc>
+      <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>SQL_Create_OrderStatus</name>
+      <name>SQL_CreateFactInternetSales</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_OrderStatus.sql</sqlfilename>
+      <sqlfilename>${MyPath}/BI_Projects/BI_62/task2/data_mart/Fact_InternetSales.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_62</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>4</nr>
-      <xloc>272</xloc>
-      <yloc>480</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Ceate_ProductModel</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_ProductModel.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>5</nr>
-      <xloc>272</xloc>
-      <yloc>544</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Create_ProductTopCategory</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_ProductTopCategory.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>6</nr>
-      <xloc>272</xloc>
-      <yloc>608</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Create_Product</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_Product.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>7</nr>
-      <xloc>272</xloc>
-      <yloc>736</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Create_ProductSubCategory</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_ProductSubCategory.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>1</nr>
-      <xloc>272</xloc>
-      <yloc>672</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Create_SalesOrderDetail</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_SalesOrderDetail.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>1</nr>
-      <xloc>272</xloc>
-      <yloc>960</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Create_ShipMethod</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_ShipMethod.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>2</nr>
-      <xloc>272</xloc>
-      <yloc>800</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>SQL_Create_SalesOrderHeader</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}/BI_Projects/BI_62/task1/oltp_db/TB_SalesOrderHeader.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>BI_Bikes_62</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>3</nr>
-      <xloc>272</xloc>
-      <yloc>880</yloc>
+      <xloc>352</xloc>
+      <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
     <hop>
       <from>Start</from>
-      <to>SQL_Create_Country</to>
+      <to>SQL_CreateDimCustomer</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -612,8 +486,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>SQL_Create_Country</from>
-      <to>SQL_Create_Address</to>
+      <from>SQL_CreateDimCustomer</from>
+      <to>SQL_CreateDimDate</to>
       <from_nr>0</from_nr>
       <to_nr>1</to_nr>
       <enabled>Y</enabled>
@@ -621,8 +495,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL_Create_Address</from>
-      <to>SQL_Create_Person</to>
+      <from>SQL_CreateDimDate</from>
+      <to>SQL_CreateDimLocation</to>
       <from_nr>1</from_nr>
       <to_nr>2</to_nr>
       <enabled>Y</enabled>
@@ -630,8 +504,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL_Create_Person</from>
-      <to>SQL_Create_Customer</to>
+      <from>SQL_CreateDimLocation</from>
+      <to>SQL_CreateDimProduct</to>
       <from_nr>2</from_nr>
       <to_nr>3</to_nr>
       <enabled>Y</enabled>
@@ -639,73 +513,10 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL_Create_Customer</from>
-      <to>SQL_Create_OrderStatus</to>
+      <from>SQL_CreateDimProduct</from>
+      <to>SQL_CreateFactInternetSales</to>
       <from_nr>3</from_nr>
       <to_nr>4</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Create_OrderStatus</from>
-      <to>SQL_Ceate_ProductModel</to>
-      <from_nr>4</from_nr>
-      <to_nr>5</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Ceate_ProductModel</from>
-      <to>SQL_Create_ProductTopCategory</to>
-      <from_nr>5</from_nr>
-      <to_nr>6</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Create_ProductTopCategory</from>
-      <to>SQL_Create_ProductSubCategory</to>
-      <from_nr>6</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Create_ProductSubCategory</from>
-      <to>SQL_Create_Product</to>
-      <from_nr>1</from_nr>
-      <to_nr>7</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Create_Product</from>
-      <to>SQL_Create_ShipMethod</to>
-      <from_nr>7</from_nr>
-      <to_nr>2</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Create_ShipMethod</from>
-      <to>SQL_Create_SalesOrderHeader</to>
-      <from_nr>2</from_nr>
-      <to_nr>3</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL_Create_SalesOrderHeader</from>
-      <to>SQL_Create_SalesOrderDetail</to>
-      <from_nr>3</from_nr>
-      <to_nr>1</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
