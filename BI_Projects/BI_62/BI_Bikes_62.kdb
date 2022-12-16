@@ -1,5 +1,5 @@
   <connection>
-    <name>BI_62</name>
+    <name>BI_Bikes_62</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
