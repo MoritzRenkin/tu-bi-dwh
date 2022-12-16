@@ -1,5 +1,5 @@
 CREATE TABLE `BI_Bikes_62`.`TB_SalesOrderHeader` (
-  `SalesOrderHeaderID` INT NOT NULL,
+  `SalesOrderID` INT NOT NULL,
   `SalesOrderNumber` VARCHAR(30) NOT NULL,
   `OrderDate` DATE NOT NULL,
   `DueDate` DATE NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `BI_Bikes_62`.`TB_SalesOrderHeader` (
   `BillToAddressID` INT NOT NULL,
   `ShipToAddressID` INT NOT NULL,
   `ShipMethodID` INT NOT NULL,
-  CONSTRAINT `PK_SalesOrderHeader` PRIMARY KEY (`SalesOrderHeaderID`),
+  CONSTRAINT `PK_SalesOrderHeader` PRIMARY KEY (`SalesOrderID`),
   CONSTRAINT `FK_OrderStatus_SalesOrderHeader`
     FOREIGN KEY (`OrderStatusID`)
     REFERENCES `BI_Bikes_62`.`TB_OrderStatus` (`OrderStatusID`),
@@ -21,7 +21,7 @@ CREATE TABLE `BI_Bikes_62`.`TB_SalesOrderHeader` (
     REFERENCES `BI_Bikes_62`.`TB_Address` (`AddressID`),
   CONSTRAINT `FK_ShipToAddress_SalesOrderHeader`
     FOREIGN KEY (`ShipToAddressID`)
-    REFERENCES `BI_Bikes_62`.`TB_ShipToAddress` (`AddressID`),
+    REFERENCES `BI_Bikes_62`.`TB_Address` (`AddressID`),
   CONSTRAINT `FK_ShipMethod_Address`
     FOREIGN KEY (`ShipMethodID`)
     REFERENCES `BI_Bikes_62`.`TB_ShipMethod` (`ShipMethodID`));
