@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql-db:
+    image: mysql:8.0.31
+    hostname: bi-mysql-db
+    container_name: bi_mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test123'
+    ports:
+      - '3306:3306'
+    volumes:
+      - bi_mysql_volume:/var/lib/mysql
+volumes:
+  bi_mysql_volume:
