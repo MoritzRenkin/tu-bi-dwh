@@ -1,5 +1,5 @@
 CREATE TABLE `BI_BikesDW_62`.`Fact_InternetSales` (
-  `SalesOrderLineNumber` VARCHAR(50) NOT NULL,
+  `SalesOrderLineNumber` VARCHAR(50) NOT NULL AUTO_INCREMENT,
   `SalesOrderNumber` VARCHAR(30) NOT NULL,
   `OrderDateKey` INT NOT NULL,
   `OrderDate` DATE NOT NULL,
