@@ -1,6 +1,6 @@
 CREATE TABLE `BI_Bikes_62`.`TB_Product` (
   `ProductID` INT NOT NULL,
-  `PruductName` VARCHAR(50) NOT NULL,
+  ProductName VARCHAR(50) NOT NULL,
   `ProductNumber` VARCHAR(50) NOT NULL,
   `StandardCost` DECIMAL(13,4) NOT NULL,
   `ListPrice` DECIMAL(13,4) NOT NULL,
