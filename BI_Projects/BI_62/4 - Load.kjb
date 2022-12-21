@@ -389,18 +389,6 @@
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
-    <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <attributes/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>568</xloc>
-      <yloc>452</yloc>
-      <attributes_kjc/>
-    </entry>
   </entries>
   <hops>
     <hop>
