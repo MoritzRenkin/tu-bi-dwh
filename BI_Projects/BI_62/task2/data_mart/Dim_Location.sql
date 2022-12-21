@@ -1,5 +1,5 @@
 CREATE TABLE `BI_BikesDW_62`.`Dim_Location` (
-  `LocationKey` INT NOT NULL AUTO_INCREMENT,
+  `LocationKey` INT NOT NULL,
   `Country` VARCHAR(50) NOT NULL,
   `Region` VARCHAR(50) NOT NULL,
   `TaxRate` DECIMAL(13,4) NULL,

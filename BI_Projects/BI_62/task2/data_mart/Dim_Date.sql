@@ -1,5 +1,5 @@
 CREATE TABLE `BI_BikesDW_62`.`Dim_Date` (
-  `DateKey` INT NOT NULL AUTO_INCREMENT,
+  `DateKey` INT NOT NULL,
   `FullDateAlternateKey` DATE NOT NULL,
   `DayNumberOfWeek` INT NOT NULL,
   `EnglishDayNameOfWeek` VARCHAR(50) NOT NULL,

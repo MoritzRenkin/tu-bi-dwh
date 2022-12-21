@@ -1,49 +1,41 @@
-DROP TEMPORARY TABLE IF EXISTS temp_dates;
-CREATE TEMPORARY TABLE temp_dates(
-   all_dates DATE NOT NULL
-);
-
-INSERT INTO temp_dates
+INSERT INTO
+    BI_BikesDW_62.Dim_Date(FullDateAlternateKey,
+                           DateKey,
+                           DayNumberOfWeek,
+                           EnglishDayNameOfWeek,
+                           DayNumberOfMonth,
+                           DayNumberOfYear,
+                           WeekNumberOfYear,
+                           EnglishMonthName,
+                           MonthNumberOfYear,
+                           CalendarQuarter,
+                           CalendarYear)
     SELECT
-        ShipDate
-    FROM
-        BI_Bikes_62.TB_SalesOrderHeader
-    UNION DISTINCT
+        @date:=AllDates.Date AS FullDateAlternateKey,
+        YEAR(@date) * 10000 + MONTH(@date) * 100 + DAYOFMONTH(@date) AS DateKey,
+        DAYOFWEEK(@date) AS DayNumberOfWeek,
+        DAYNAME(@date) AS EnglishDayNameOfWeek,
+        DAYOFMONTH(@date) AS DayNumberOfMonth,
+        DAYOFYEAR(@date) AS DayNumberOfYear,
+        WEEKOFYEAR(@date) AS WeekNumberOfYear,
+        MONTHNAME(@date) AS EnglishMonthName,
+        MONTH(@date) AS MonthNumberOfYear,
+        QUARTER(@date) AS CalendarQuarter,
+        YEAR(@date) AS CalendarYear
+    FROM (
         SELECT
-            DueDate
+            ShipDate AS Date
         FROM
             BI_Bikes_62.TB_SalesOrderHeader
-    UNION DISTINCT
-        SELECT
-            OrderDate
-        FROM
-            BI_Bikes_62.TB_SalesOrderHeader
-    ORDER BY ShipDate;
-
-
-INSERT INTO BI_BikesDW_62.Dim_Date(FullDateAlternateKey,
-                                   DayNumberOfWeek,
-                                   EnglishDayNameOfWeek,
-                                   DayNumberOfMonth,
-                                   DayNumberOfYear,
-                                   WeekNumberOfYear,
-                                   EnglishMonthName,
-                                   MonthNumberOfYear,
-                                   CalendarQuarter,
-                                   CalendarYear)
-    SELECT
-        all_dates,
-        DAYOFWEEK(all_dates),
-        DAYNAME(all_dates),
-        DAYOFMONTH(all_dates),
-        DAYOFYEAR(all_dates),
-        WEEKOFYEAR(all_dates),
-        MONTHNAME(all_dates),
-        MONTH(all_dates),
-        QUARTER(all_dates),
-        YEAR(all_dates)
-    FROM
-        temp_dates;
-
-
-DROP TEMPORARY TABLE temp_dates;
+        UNION DISTINCT
+            SELECT
+                DueDate
+            FROM
+                BI_Bikes_62.TB_SalesOrderHeader
+        UNION
+            SELECT
+                OrderDate
+            FROM
+                BI_Bikes_62.TB_SalesOrderHeader
+         ) AS AllDates
+;
