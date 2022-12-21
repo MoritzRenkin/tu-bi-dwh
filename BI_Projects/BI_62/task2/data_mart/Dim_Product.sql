@@ -1,5 +1,5 @@
 CREATE TABLE `BI_BikesDW_62`.`Dim_Product` (
-  `ProductKey` INT NOT NULL AUTO_INCREMENT,
+  `ProductKey` INT NOT NULL,
   `ProductName` VARCHAR(50) NOT NULL,
   `ProductModelName` VARCHAR(50) NOT NULL,
   `ProductSubCategoryName` VARCHAR(50) NOT NULL,

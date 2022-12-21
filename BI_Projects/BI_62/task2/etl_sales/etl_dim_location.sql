@@ -1,4 +1,7 @@
-INSERT INTO BI_BikesDW_62.Dim_Location
+INSERT INTO BI_BikesDW_62.Dim_Location(Country,
+                                       Region,
+                                       TaxRate,
+                                       ShipCoeff)
     SELECT
         Country,
         Region,
