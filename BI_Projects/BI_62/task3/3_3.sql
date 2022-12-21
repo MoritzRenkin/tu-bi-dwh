@@ -1,4 +1,4 @@
-SELECT c.FullName AS "Customer Name", SUM(f.OrderLineProfit) AS "Profit"
+SELECT RANK() OVER (ORDER BY SUM(f.OrderLineProfit) DESC) AS "Rank", c.FullName AS "Customer Name", SUM(f.OrderLineProfit) AS "Profit"
 FROM BI_BikesDW_62.Fact_InternetSales f
 JOIN BI_BikesDW_62.Dim_Customer c
 ON f.CustomerKey = c.CustomerKey

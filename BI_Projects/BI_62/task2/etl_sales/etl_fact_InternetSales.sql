@@ -34,7 +34,7 @@ INSERT INTO
         ShipMethodName AS ShipMethod,
         OrderQty,
         UnitPrice,
-        @OrderLineTotal:= CAST(OrderQty * UnitPrice * UnitPrice AS FLOAT) AS OrderLineTotal,
+        @OrderLineTotal:= CAST(OrderQty * UnitPrice AS FLOAT) AS OrderLineTotal,
         @OrderLineTotal - OrderQty * StandardCost AS OrderLineProfit,
         @OrderLineTotal * TaxRate AS OrderLineTaxAmount,
         ShipSurcharge + ShipBase + (OrderQty * ShipRate * ShipCoeff) AS OrderLineShippingCost
