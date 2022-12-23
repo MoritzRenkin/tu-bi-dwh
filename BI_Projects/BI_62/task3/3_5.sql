@@ -1,11 +1,17 @@
 SELECT
-    MONTH(OrderDate) AS OrderMonth,
-    SUM(OrderLineShippingCost) AS TotalShippingCost
+    Country,
+    CalendarYear AS Year,
+    EnglishMonthName AS Month,
+    SUM(OrderLineShippingCost) AS "Shipping Cost"
 FROM
-    BI_BikesDW_62.Fact_InternetSales
-    JOIN BI_BikesDW_62.Dim_Location
-        ON Fact_InternetSales.ShipToLocationKey = Dim_Location.LocationKey
+    BI_BikesDW_62.Fact_InternetSales InternetSales
+    JOIN BI_BikesDW_62.Dim_Location Location
+        ON InternetSales.ShipToLocationKey = Location.LocationKey
+    JOIN BI_BikesDW_62.Dim_Date Date
+        ON InternetSales.DueDateKey = Date.DateKey
+
 WHERE Country = 'United Kingdom'
     AND ShipMethod = 'Cargo International'
-    AND OrderDate BETWEEN '2020-01-01' AND '2020-06-30'
-GROUP BY OrderMonth;
+    AND CalendarYear = 2020
+    AND MonthNumberOfYear BETWEEN 1 AND 6
+GROUP BY Year, Month;
