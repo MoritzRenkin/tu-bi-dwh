@@ -4,7 +4,7 @@ services:
     image: mysql:8.0.31
     hostname: bi-mysql-db
     container_name: bi_mysql_db
-    restart: no
+    restart: on-failure
     environment:
       MYSQL_ROOT_PASSWORD: 'test123'
     ports:

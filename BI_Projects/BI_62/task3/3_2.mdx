@@ -1,0 +1,11 @@
+SELECT
+	[Measures].[Revenue] ON COLUMNS,
+	ORDER(
+		[ShippedTo].[Country].MEMBERS,
+		[Measures].[Revenue],
+		DESC
+	) ON ROWS
+FROM
+	[bike_sales]
+WHERE
+	[OrderDate].[Year].[2019]

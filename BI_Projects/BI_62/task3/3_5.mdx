@@ -1,0 +1,6 @@
+SELECT
+  {[Measures].[ShippingCost]} ON COLUMNS,
+  [OrderDate.Days].[Month].MEMBERS ON ROWS
+FROM
+  [bike_sales]
+WHERE [ShippedTo.Territory].[Country].[United Kingdom]

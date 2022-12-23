@@ -28,7 +28,6 @@ INSERT INTO
         FROM
             BI_Bikes_62.TB_SalesOrderHeader
         UNION DISTINCT
-
             SELECT
                 DueDate
             FROM
