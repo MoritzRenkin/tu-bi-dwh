@@ -23,19 +23,14 @@ INSERT INTO
         QUARTER(@date) AS CalendarQuarter,
         YEAR(@date) AS CalendarYear
     FROM (
-        SELECT
-            ShipDate AS Date
-        FROM
-            BI_Bikes_62.TB_SalesOrderHeader
+        SELECT ShipDate AS Date
+        FROM BI_Bikes_62.TB_SalesOrderHeader
+
         UNION DISTINCT
-            SELECT
-                DueDate
-            FROM
-                BI_Bikes_62.TB_SalesOrderHeader
+            SELECT DueDate
+            FROM BI_Bikes_62.TB_SalesOrderHeader
         UNION
-            SELECT
-                OrderDate
-            FROM
-                BI_Bikes_62.TB_SalesOrderHeader
+            SELECT OrderDate
+            FROM BI_Bikes_62.TB_SalesOrderHeader
          ) AS AllDates
 ;

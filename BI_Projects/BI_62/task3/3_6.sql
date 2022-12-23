@@ -21,8 +21,7 @@ FROM (
             ProductModelName,
             SUM(OrderQty) AS QuantitySold
         FROM BI_BikesDW_62.Fact_InternetSales
-            JOIN BI_BikesDW_62.Dim_Product
-                ON Fact_InternetSales.ProductKey = Dim_Product.ProductKey
+            JOIN BI_BikesDW_62.Dim_Product ON Fact_InternetSales.ProductKey = Dim_Product.ProductKey
         GROUP BY
             ProductTopCategoryName,
             ProductSubCategoryName,

@@ -21,7 +21,6 @@ INSERT INTO
 
     FROM
         BI_Bikes_62.TB_Customer customer
-        JOIN BI_Bikes_62.TB_Person person
-            ON customer.PersonID = person.PersonID
+        JOIN BI_Bikes_62.TB_Person person ON customer.PersonID = person.PersonID
 ;
 

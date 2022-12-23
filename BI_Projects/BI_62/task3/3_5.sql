@@ -5,10 +5,8 @@ SELECT
     SUM(OrderLineShippingCost) AS "Shipping Cost"
 FROM
     BI_BikesDW_62.Fact_InternetSales InternetSales
-    JOIN BI_BikesDW_62.Dim_Location Location
-        ON InternetSales.ShipToLocationKey = Location.LocationKey
-    JOIN BI_BikesDW_62.Dim_Date Date
-        ON InternetSales.DueDateKey = Date.DateKey
+    JOIN BI_BikesDW_62.Dim_Location Location ON InternetSales.ShipToLocationKey = Location.LocationKey
+    JOIN BI_BikesDW_62.Dim_Date Date ON InternetSales.DueDateKey = Date.DateKey
 
 WHERE Country = 'United Kingdom'
     AND ShipMethod = 'Cargo International'
