@@ -1,9 +1,11 @@
 SELECT
     grouped_ranked.ProductTopCategoryName,
+    grouped_ranked.ProductSubCategoryName,
     grouped_ranked.ProductModelName,
     grouped_ranked.QuantitySold
 FROM (
     SELECT grouped.ProductTopCategoryName,
+           grouped.ProductSubCategoryName,
            grouped.ProductModelName,
            grouped.QuantitySold,
            -- MySQL 8.0.0 and above support Window functions like ROW_NUMBER() OVER
@@ -15,12 +17,13 @@ FROM (
     FROM (
         SELECT
             ProductTopCategoryName,
+            ProductSubCategoryName,
             ProductModelName,
             SUM(OrderQty) AS QuantitySold
         FROM BI_BikesDW_62.Fact_InternetSales
             JOIN BI_BikesDW_62.Dim_Product
                 ON Fact_InternetSales.ProductKey = Dim_Product.ProductKey
-        GROUP BY ProductTopCategoryName, ProductModelName
+        GROUP BY ProductTopCategoryName, ProductSubCategoryName, ProductModelName
          ) AS grouped
      ) AS grouped_ranked
 
