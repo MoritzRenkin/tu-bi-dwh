@@ -1,0 +1,8 @@
+Answer to Bonus question:
+
+One possible consideration for improving the provided schema is to introduce snowflaking to some dimension tables.
+For example, each Product has an assigned a Top and Sub Category which is saved inside the Dim_Product table in a non-normalized form.
+Although this non-normalized dimension table is perfectly aligned with the Star Scheme, this Product Dimension table can grow quite big in size which makes it harder to maintain and less efficient in certain cases (when product categories are queried independently).
+One solution would be to normalize the product dimension by adding a SubCategory and TopCategory table. This would make changes in the Product Catalog and Category Mapping easier to reflect in the data warehouse.
+
+The same snowflaking COULD be applied to the Location dimension but it would perhaps be less advantageous there. Mapping between Region can be expected to be rarely queried independently or their mapping to be changed.
