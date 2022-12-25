@@ -1,19 +1,19 @@
 SELECT
-    grouped_ranked.ProductTopCategoryName AS "Product Top Category",
-    grouped_ranked.ProductSubCategoryName AS "Product Sub Category",
-    grouped_ranked.ProductModelName AS "Product Model",
-    grouped_ranked.QuantitySold AS "Quantity Sold"
+    ranked_by_group.ProductTopCategoryName AS "Product Top Category",
+    ranked_by_group.ProductSubCategoryName AS "Product Sub Category",
+    ranked_by_group.ProductModelName AS "Product Model",
+    ranked_by_group.QuantitySold AS "Quantity Sold"
 FROM (
     SELECT grouped.ProductTopCategoryName,
            grouped.ProductSubCategoryName,
            grouped.ProductModelName,
            grouped.QuantitySold,
-           -- MySQL 8.0.0 and above support Window functions like ROW_NUMBER() OVER
-           -- Using Window functions to solve top-n-per-group problems is preferred due to performance considerations
+           -- MySQL 8.0.0 and above supports Window-Functions like ROW_NUMBER() OVER
+           -- Using Window-Functions to solve top-n-per-group problems is superior in terms of performance.
            ROW_NUMBER() OVER (
                PARTITION BY ProductTopCategoryName
                ORDER BY QuantitySold DESC
-               ) ranked_order
+               ) group_rank
     FROM (
         SELECT
             ProductTopCategoryName,
@@ -27,9 +27,9 @@ FROM (
             ProductSubCategoryName,
             ProductModelName
          ) AS grouped
-     ) AS grouped_ranked
+     ) AS ranked_by_group
 
-WHERE grouped_ranked.ranked_order <= 3
+WHERE ranked_by_group.group_rank <= 3
 ORDER BY
     ProductTopCategoryName ASC,
     QuantitySold DESC;
