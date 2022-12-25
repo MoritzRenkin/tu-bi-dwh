@@ -2,11 +2,11 @@ SELECT
     Country,
     CalendarYear AS Year,
     EnglishMonthName AS Month,
-    SUM(OrderLineShippingCost) AS "Shipping Cost"
+    SUM(OrderLineShippingCost) AS "Shipping costs"
 FROM
     BI_BikesDW_62.Fact_InternetSales InternetSales
     JOIN BI_BikesDW_62.Dim_Location Location ON InternetSales.ShipToLocationKey = Location.LocationKey
-    JOIN BI_BikesDW_62.Dim_Date Date ON InternetSales.DueDateKey = Date.DateKey
+    JOIN BI_BikesDW_62.Dim_Date Date ON InternetSales.OrderDateKey = Date.DateKey
 
 WHERE Country = 'United Kingdom'
     AND ShipMethod = 'Cargo International'

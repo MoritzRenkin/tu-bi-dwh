@@ -1,6 +1,11 @@
-SELECT
-  {[Measures].[ShippingCost]} ON COLUMNS,
+SELECT {
+  [Measures].[ShippingCost]
+  } ON COLUMNS, 
   [OrderDate.Days].[Month].MEMBERS ON ROWS
-FROM
-  [bike_sales]
-WHERE [ShippedTo.Territory].[Country].[United Kingdom]
+  FROM [bike_sales]
+  WHERE (
+    [ShippedTo.Territory].[Country].[United Kingdom],
+    [ShipMethod].[Cargo International],
+    [Date].[CalendarYear].[2020],
+  [Date].[CalendarMonthNumberOfYear].&[1] : [Date].[CalendarMonthNumberOfYear].&[6]
+  )

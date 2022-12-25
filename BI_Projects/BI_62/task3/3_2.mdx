@@ -3,7 +3,7 @@ SELECT
 	ORDER(
 		[ShippedTo].[Country].MEMBERS,
 		[Measures].[Revenue],
-		DESC
+		BDESC
 	) ON ROWS
 FROM
 	[bike_sales]
